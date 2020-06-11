@@ -81,6 +81,8 @@ class App extends Component {
       this.setState({ info });
 
       let accounts = await this.web3.eth.getAccounts();
+      console.log('aaaa');
+      console.log(accounts[0]);
       const currentPeerInfo = {
         id: info.id,
         address: accounts[0].toLowerCase(),
@@ -225,7 +227,7 @@ class App extends Component {
         <AppBar position="static">
           <Toolbar>
             <Typography variant="title" color="inherit" className={classes.flex}>
-              Payment Channels Demo
+              Uni-Directional Payment Channels Demo
             </Typography>
           </Toolbar>
         </AppBar>
