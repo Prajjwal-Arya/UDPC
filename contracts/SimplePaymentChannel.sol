@@ -3,7 +3,6 @@ pragma solidity ^0.4.24;
 import "zeppelin-solidity/contracts/math/SafeMath.sol";
 import "zeppelin-solidity/contracts/ECRecovery.sol";
 
-
 contract SimplePaymentChannel {
     using SafeMath for uint256;
     using ECRecovery for bytes32;
@@ -73,6 +72,7 @@ contract SimplePaymentChannel {
         expiration = _expiration;
     }
 
+
     function claimTimeout() public {
         // must be beyond expiration date
         require(now >= expiration);
@@ -84,7 +84,6 @@ contract SimplePaymentChannel {
     //============================================================================
     // INTERNAL FUNCTIONS
     //============================================================================
-
     function isValidSignature(uint256 _balance, bytes _signedMessage)
         internal
         view
